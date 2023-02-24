@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Check if node is installed
 if ! command -v node &> /dev/null
 then
@@ -10,15 +11,24 @@ fi
 if ! command -v ngrok &> /dev/null
 then
     echo "ngrok could not be found"
-    exit
+    # install ngrok
+    echo "Installing ngrok..."
+    echo "npm install ngrok -g"
+    npm install ngrok -g
+    echo "ngrok installed"
 fi
 
 # Check if keppler is installed
 if ! command -v keppler &> /dev/null
 then
     echo "keppler could not be found"
-    exit
+    # install keppler
+    echo "Installing keppler..."
+    echo "npm install keppler -g"
+    npm install keppler -g
+    echo "keppler installed successfully"
 fi
+
 # Default values for optional arguments
 DEBUG=1
 NAME="folder name"
